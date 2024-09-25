@@ -1,9 +1,11 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const cors = require("cors");
+const port = 3005;
 const { connection } = require("./db");
 
 app.use(express.json());
+app.use(cors());
 
 app.post("/add", (req, res) => {
   const { name, email, password } = req.body;
